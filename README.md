@@ -1,5 +1,7 @@
 # backbone-template-store
 
+[![Build Status](https://travis-ci.org/ndavison/backbone-template-store.svg?branch=master)](https://travis-ci.org/ndavison/backbone-template-store)
+
 Extends Backbone Views to include template retrieval (via XMLHttpRequest GET) and template caching. 
 
 ## Usage
