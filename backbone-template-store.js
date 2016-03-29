@@ -44,7 +44,7 @@
 				callback(compileFromCache(templateURL, viewData));
 			});
 			_xhr.addEventListener('error', function() {
-				console.log(this);
+				throw new Error('Failed to load template from server.');
 			});
 			_xhr.send();
 
