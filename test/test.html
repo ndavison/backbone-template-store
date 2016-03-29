@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title>backbone-template-store tests</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css"/>
+    <script src="../node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="../node_modules/underscore/underscore-min.js" type="text/javascript"></script>
+    <script src="../node_modules/backbone/backbone-min.js" type="text/javascript"></script>
+	<script src="../backbone-template-store.js" type="text/javascript"></script>
+	<script src="../node_modules/mocha/mocha.js" type="text/javascript"></script>
+	<script src="../node_modules/chai/chai.js" type="text/javascript"></script>
+	<script src="../node_modules/sinon/pkg/sinon-1.17.3.js" type="text/javascript"></script>
+  </head>
+  <body>
+  	<div id="mocha"></div>
+  	<script type="text/javascript">
+  		mocha.ui('bdd');
+  		chai.should();
+  	</script>
+  	<script src="get-template.js" type="text/javascript"></script>
+  	<script type="text/javascript">
+  		mocha.run();
+  	</script>
+  </body>
+</html>

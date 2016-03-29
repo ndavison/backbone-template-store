@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "4"
+before_install:
+  - npm install -g npm
+  - npm install -g phantomjs-prebuilt
+  - npm install -g mocha-phantomjs
+script:
+  - npm test
+sudo: false
+cache:
+  directories:
+    - node_modules
