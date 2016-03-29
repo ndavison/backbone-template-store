@@ -5,6 +5,11 @@ before_install:
   - npm install -g npm
   - npm install -g phantomjs-prebuilt
   - npm install -g mocha-phantomjs
+  - npm install underscore
+  - npm install backbone
+  - npm install jquery
+script:
+script:
 script:
   - npm test
 sudo: false
