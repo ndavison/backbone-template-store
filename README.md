@@ -2,7 +2,7 @@
 
 Extends Backbone Views to include template retrieval (via XMLHttpRequest GET) and template caching. 
 
-# Usage
+## Usage
 
 ```
 npm install backbone-template-store
