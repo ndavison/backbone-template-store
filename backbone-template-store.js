@@ -21,11 +21,11 @@
 
 	"use strict";
 
-	var _xhr = new XMLHttpRequest();
 	var _templateCache = {};
 
 	Backbone.View.prototype.getTemplate = function(templateURL, viewData, parser, callback) {
 
+		var xhr = new XMLHttpRequest();
 		viewData = viewData || {};
 		parser = parser || function(){};
 		callback = callback || function(){};
@@ -38,15 +38,15 @@
 
 		if (!_templateCache[templateURL]) {
 
-			_xhr.open('GET', templateURL);
-			_xhr.addEventListener('load', function() {
+			xhr.open('GET', templateURL);
+			xhr.addEventListener('load', function() {
 				_templateCache[templateURL] = this.responseText;
 				callback(compileFromCache(templateURL, viewData));
 			});
-			_xhr.addEventListener('error', function() {
+			xhr.addEventListener('error', function() {
 				throw new Error('Failed to load template from server.');
 			});
-			_xhr.send();
+			xhr.send();
 
 		} else {
 
