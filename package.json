@@ -1,0 +1,36 @@
+{
+  "name": "backbone-template-store",
+  "version": "0.1.0",
+  "description": "Extends Backbone Views to include template retrieval and template caching.",
+  "main": "backbone-template-store.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "uglifyjs backbone-template-store.js --mangle --source-map backbone-template-store-min.map -o backbone-template-store-min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndavison/backbone-template-store.git"
+  },
+  "keywords": [
+    "backbone",
+    "template"
+  ],
+  "author": "Nathan Davison <www.nathandavison.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndavison/backbone-template-store/issues"
+  },
+  "peerDependencies": {
+    "backbone": "~1.3.2"
+  },
+  "homepage": "https://github.com/ndavison/backbone-template-store#readme",
+  "devDependencies": {
+    "uglify-js": "^2.6.2"
+  },
+  "files": [
+    "backbone-template-store.js",
+    "backbone-template-store-min.js",
+    "backbone-template-store-min.map",
+    "LICENSE"
+  ]
+}
