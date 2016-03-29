@@ -23,12 +23,13 @@
 
 	var _templateCache = {};
 
-	Backbone.View.prototype.getTemplate = function(templateURL, viewData, parser, callback) {
+	Backbone.View.prototype.getTemplate = function(templateURL, viewData, parser, callback, errorCallback) {
 
 		var xhr = new XMLHttpRequest();
 		viewData = viewData || {};
 		parser = parser || function(){};
 		callback = callback || function(){};
+		errorCallback = errorCallback || function(){};
 		var compileFromCache = function(templateURL, viewData) {
 			var rawTemplate = _templateCache[templateURL] || '';
 			var parsed = parser(rawTemplate);
@@ -40,11 +41,15 @@
 
 			xhr.open('GET', templateURL);
 			xhr.addEventListener('load', function() {
-				_templateCache[templateURL] = this.responseText;
-				callback(compileFromCache(templateURL, viewData));
+				if (this.status == 404) {
+					errorCallback(this);
+				} else {
+					_templateCache[templateURL] = this.responseText;
+					callback(compileFromCache(templateURL, viewData));
+				}
 			});
 			xhr.addEventListener('error', function() {
-				throw new Error('Failed to load template from server.');
+				errorCallback(this);
 			});
 			xhr.send();
 
@@ -53,6 +58,8 @@
 			callback(compileFromCache(templateURL, viewData));
 
 		}
+
+		return this;
 
 	};
 
