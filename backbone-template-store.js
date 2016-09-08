@@ -59,7 +59,7 @@
 
 		}
 
-		return this;
+		return xhr;
 
 	};
 
