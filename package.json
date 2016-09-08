@@ -1,6 +1,6 @@
 {
   "name": "backbone-template-store",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Extends Backbone Views to include template retrieval and template caching.",
   "main": "backbone-template-store.js",
   "scripts": {
